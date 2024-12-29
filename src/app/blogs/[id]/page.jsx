@@ -5,13 +5,13 @@ const BlogsDetails = ({ params }) => {
   console.log(params.id);
 
   const singleData = blogs.find((blog) => blog.id == params.id);
-  console.log(singleData);
+  // console.log(singleData);
+  const image = singleData.image;
   return (
-    <div className="pt-16">
+    <div className="pt-16 my-10">
       <h3 className="text-3xl text-center">blogs details</h3>
       <div>
-        {/* <img src={blog.image} alt={blog.image} /> */}
-        {/* <Image width={400} height={400} src={singleData.image} alt="NO IMG FOUND"/> */}
+        <Image width={400} height={400} src={`/${image}`} alt="NO IMG FOUND" />
         <h3 className="text-green-500 text-2xl ">
           blog name : {singleData.name}
         </h3>
