@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const page = async ({ params }) => {
-  console.log(params);
+//   console.log(params);
   const productData = await getProduct();
 
   const singleData = productData.find((product) => product._id === params._id);
