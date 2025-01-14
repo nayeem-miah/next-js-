@@ -1,12 +1,13 @@
+import getPosts from "@/Components/getPost";
 import React from "react";
 
-const getPost = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  return res.json();
-};
+// const getPost = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//   return res.json();
+// };
 
 const postPage = async () => {
-  const posts = await getPost();
+  const posts = await getPosts();
   console.log(posts);
   return (
     <div className="mt-20">
