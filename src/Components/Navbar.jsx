@@ -11,10 +11,10 @@ const Navbar = () => {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/skills", label: "Skills" },
-    { href: "/project", label: "Projects" },
-    { href: "/blogs", label: "Blogs" },
     { href: "/products", label: "Products" },
+    // { href: "/project", label: "Projects" },
+    { href: "/blogs", label: "Blogs" },
+    { href: "/posts", label: "posts" },
   ];
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
