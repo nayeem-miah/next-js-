@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const Meals = () => {
@@ -61,7 +62,9 @@ const Meals = () => {
                 className="border border-green-400 p-3 w-60"
               >
                 <p>{meal?.strInstructions.slice(0, 100)}</p>
-                <img className="" src={meal?.strMealThumb} alt="" />
+
+                <Image src={meal?.strMealThumb} width={500} height={500}/>
+                {/* <img className="" src={meal?.strMealThumb} alt="" /> */}
               </div>
             ))}
           {meals == null && (
