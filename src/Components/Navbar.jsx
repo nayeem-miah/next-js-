@@ -15,6 +15,7 @@ const Navbar = () => {
     // { href: "/project", label: "Projects" },
     { href: "/blogs", label: "Blogs" },
     { href: "/posts", label: "posts" },
+    {href: "/meals", label : "meals"}
   ];
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
