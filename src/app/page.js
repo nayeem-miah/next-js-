@@ -1,11 +1,24 @@
+import { Headland_One } from "next/font/google";
 
+const headland = Headland_One({weight: ["400"], subsets:["latin"]})
 
 export default function Home() {
  
   return (
-    <main className="flex  flex-col items-center justify-between p-24">
+    <main className={`flex  flex-col items-center justify-between p-24 ${headland.className}`}>
       <div>
         <h3>this is home page</h3>
+        <p>welcome to my next milestone .......</p>
+        <p className="text-green-600"> I'm Nayeem,I am a Frontend Developer.I'm a dedicated Frontend
+          Developer driven by a passion for creating visually stunning and
+          user-friendly web interfaces. My expertise spans HTML, CSS,
+          JavaScript, React.js, Node.js, Express.js, Firebase, MongoDB, and
+          Tailwind CSS. With a strong focus on design and an ongoing commitment
+          to enhancing my skills, I strive to deliver seamless and engaging user
+          experiences. I have been involved in web development for several days.
+          I am still learning. I have also done several projects. Still doing
+          the project. My dream is to become </p>
+        
       </div>
     </main>
   );

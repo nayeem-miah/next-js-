@@ -1,9 +1,12 @@
-import { Inter } from "next/font/google";
+import { Inter, Roboto, Italiana, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const italiana = Italiana({weight:["400"], subsets: ["latin"] });
+const roboto = Roboto({weight:["400", "500", "900"], subsets: ["latin"] });
+const popins = Poppins({weight:["400", "500", "900"], subsets: ["latin"] });
 
 export const metadata = {
   title: {
@@ -16,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={italiana.className}>
     <Navbar/> 
         <div className="min-h-screen px-2 py-2">{children}</div>
        <div>
