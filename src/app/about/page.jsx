@@ -79,3 +79,9 @@ const aboutPage = () => {
 };
 
 export default aboutPage;
+
+
+export const metadata = {
+  title: "about",
+  description: "about page",
+};
