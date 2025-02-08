@@ -1,6 +1,9 @@
-    export async function GET(){
-        return Response.json({
-           comments
+export async function GET(){
+        return Response.json(
+           comments, {
+            headers:{
+                "Set-Cookie": "theme=dark"
+            }
         })
     }
 //    post request

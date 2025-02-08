@@ -1,6 +1,6 @@
-export async function GET(request, {params}){
+export async function PATCH(request, {params}){
     // console.log(params.id);
-    const body = request.json()
+    const body =await request.json()
     const index = comments.findIndex((c)=> c.id === parseInt(params.id));
     comments[index] = {
         text : body.text
@@ -11,7 +11,14 @@ export async function GET(request, {params}){
     })
 }
 
-
+//  DELETE FUNCTION
+export async function DELETE(request, {params}){
+    const newComments = comments.filter((c)=> c.id === parseInt(params.id));
+    return Response.json({
+        message: "comment DELETE", 
+        newComments
+    })
+}
 
 const comments = [
     {
