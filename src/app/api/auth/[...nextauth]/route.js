@@ -7,12 +7,6 @@ const handler = NextAuth({
     providers : [
     CredentialsProvider({
         credentials : {
-            userName  : {
-                label : "userName",
-                type : "text",
-                required : true,
-                placeholder: "enter user name"             
-            },
             email : {
                 label : "Email",
                 type : "text",
@@ -27,14 +21,36 @@ const handler = NextAuth({
             },
         },
         async authorize (credentials){
+            const {email, password} = credentials;
             if(!credentials) {
                 return null
             }
-            return true;
+            if(email){
+                const currentUsers = users.find((user)=> user.email = email)
+                if(currentUsers.password == password){
+                    return currentUsers;
+                }
+            }
         }
     })
     ], 
  
 })
+
+
+const users = [
+    {
+        id: 1,
+        name : "emon", 
+        email: "e@gmail.com",
+        password: "password"
+    },
+    {
+        id: 2,
+        name : "hemon", 
+        email: "h@gmail.com",
+        password: "password"
+    },
+]
 
 export {handler as GET , handler as POST}

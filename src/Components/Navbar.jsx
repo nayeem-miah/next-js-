@@ -91,7 +91,7 @@ const Navbar = () => {
       <div className="navbar-end">
       <button
          
-         onClick={() => router.push("/login")}
+         onClick={() => router.push("/api/auth/signin")}
              
           className="bg-green-500 p-2 rounded-md my-4"
         >
