@@ -30,7 +30,7 @@ const Meals = () => {
     loadData();
   }, [search]);
 
-  console.log(meals);
+  // console.log(meals);
   return (
     <div className="mt-20">
       <h3 className="text-3xl text-green-500 font-semibold">

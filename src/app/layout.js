@@ -2,6 +2,7 @@ import { Inter, Roboto, Italiana, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
+import AuthProvider from "./products/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const italiana = Italiana({weight:["400"], subsets: ["latin"] });
@@ -19,7 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={italiana.className}>
+    <AuthProvider>
+    <body className={italiana.className}>
     <Navbar/> 
         <div className="min-h-screen px-2 py-2">{children}</div>
        <div>
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
        <Footer/>
        </div>
       </body>
+    </AuthProvider>
     </html>
   );
 }

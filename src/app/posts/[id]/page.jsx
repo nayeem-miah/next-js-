@@ -28,7 +28,7 @@ export const generateMetadata = async ({ params }) => {
 const postDetails = async ({ params }) => {
   // console.log(params.id);
   const data = await fetchingDetails(params.id);
-  console.log(data);
+  // console.log(data);
   return (
     <div className="mt-20">
       post details id of : {params.id}

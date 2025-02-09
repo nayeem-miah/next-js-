@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -6,6 +7,8 @@ import { useState } from "react";
 const Navbar = () => {
   const pathName = usePathname();
   const router = useRouter();
+const session = useSession()
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navLinks = [
@@ -89,14 +92,19 @@ const Navbar = () => {
 
       {/* Navbar End */}
       <div className="navbar-end">
-      <button
-         
-         onClick={() => router.push("/api/auth/signin")}
-             
-          className="bg-green-500 p-2 rounded-md my-4"
-        >
-          login
-        </button>
+    {
+     session.status === "authenticated" ?  
+      
+    
+       <button>
+        logout
+      </button> : <button
+       onClick={() => router.push("/api/auth/signin")}
+        className="bg-green-500 p-2 rounded-md my-4"
+      >
+        login
+      </button>
+    }
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 const BlogsDetails = ({ params }) => {
-  console.log(params.id);
+  // console.log(params.id);
 
   const singleData = blogs.find((blog) => blog.id == params.id);
   // console.log(singleData);
